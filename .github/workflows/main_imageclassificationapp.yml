@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://imageclassification.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_7dbdf92a1bbf41768406151c10242688 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_d4da3de7b7b94e06bf66909f2947789f }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_6cd2db79b9a44e279a245c0804576433 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_61bc99e920364ba9b07307123125ee26 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: imageclassification.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_7dbdf92a1bbf41768406151c10242688 }}/imageclassfication:${{ github.sha }}
+        tags: imageclassification.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_6cd2db79b9a44e279a245c0804576433 }}/imageclassification:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'imageclassificationapp'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_537a18773d1948a0b687d1a76f9fd485 }}
-        images: 'imageclassification.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_7dbdf92a1bbf41768406151c10242688 }}/imageclassfication:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_16b42a49744a47209c743c4e59264914 }}
+        images: 'imageclassification.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_6cd2db79b9a44e279a245c0804576433 }}/imageclassification:${{ github.sha }}'

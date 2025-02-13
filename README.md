@@ -64,7 +64,7 @@ model_1.summary()
 
 The model summary is shown here:
 
-[model summary](images/)
+![model summary](images/summary.png)
 
 After building the model, it can now be trained and validated. This training only utilized 4 epochs for training as the goal was not to create a strong performing model. This project can be advanced by adding more layers to the CNN model as well as adding more epochs to the training step.
 
@@ -81,7 +81,7 @@ model_1.evaluate(test_data)
 
 Model evaluation:
 
-[model eval](images/)
+![model eval](images/eval.png)
 
 This is sufficient enough to move on to plotting validation graphs.  
 
@@ -89,10 +89,10 @@ This is sufficient enough to move on to plotting validation graphs.
 
 The model can now be validated with the test dataset and this can be viewed through plots using the matplotlib library. These are the plots for validation loss and accuracy:
 
-[val loss](images/)
+![val loss](images/val-loss.png)
 
 
-[val accuracy](images/)
+![val accuracy](images/val-accuracy.png)
 
 With the model looking passable enough to demo in an app, it is time to save the model using
 
@@ -108,7 +108,7 @@ The main framework is a very simple visual application to use the model. The flo
 
 The Streamlit application looks like this and this is what will be hosted on Azure:
 
-[app](images/)
+![app](images/web-app.png)
 
 ### Dockerfile
 
